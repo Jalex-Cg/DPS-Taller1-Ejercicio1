@@ -31,7 +31,7 @@ return (
             <label>Agregar Producto</label><br />
             <select name="todo" onChange={handleChange}>
                 <option selected disabled="true">-Seleccionar producto-</option>
-                {producto.ListaProducto.map((result)=> (<option title={"$"+result.precio}>{result.nombre}</option>))}
+                {producto.ListaProducto.map((result)=> (<option name="precio" title={"$"+result.precio}>{result.nombre}</option>))}
             </select>
         </div>
         <button onClick={handleClick}>agregar</button>
