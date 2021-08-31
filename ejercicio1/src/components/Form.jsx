@@ -1,14 +1,10 @@
 
 import Todo from '../components/Todo';
 import { useState } from 'react';
-
+import producto from '../producto.json';
 const Form = () => {
     const [todo, setTodo] = useState({})
-    const [todos, setTodos]=useState([
-        {todo: 'todo 1'},
-        {todo: 'todo 2'},
-        {todo: 'todo 3'},
-    ])
+    const [todos, setTodos]=useState([])
 
 const handleChange = e => setTodo({[e.target.name]: e.target.value})
 const handleClick = e => {
@@ -28,8 +24,14 @@ const deleteTodo = indice => {
 return (
     <>
     <form onSubmit={e => e.preventDefault()}>
-        <label>Agregar tarea</label><br />
-        <input type="text" name="todo" onChange={handleChange} />
+
+        <div>
+            <label>Agregar Producto</label><br />
+            <select name="todo" onChange={handleChange}>
+                <option selected disabled="true">-Seleccionar producto-</option>
+                {producto.ListaProducto.map((result)=> (<option title={"$"+result.precio}>{result.nombre}</option>))}
+            </select>
+        </div>
         <button onClick={handleClick}>agregar</button>
     </form>
     {
