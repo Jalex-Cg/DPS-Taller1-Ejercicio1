@@ -4,7 +4,9 @@ import { useState } from 'react';
 import producto from '../producto.json';
 const Form = () => {
     const [todo, setTodo] = useState({})
-    const [todos, setTodos]=useState([])
+    const [todos, setTodos]=useState([
+        
+    ])
 
 const handleChange = e => setTodo({[e.target.name]: e.target.value})
 const handleClick = e => {
